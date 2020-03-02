@@ -8,19 +8,20 @@ public class ClientExec extends javax.swing.JFrame {
     
     //Creacion de atributos y objetos para llamar a clase usuario
     String Nombre = JOptionPane.showInputDialog("Por Favor Digite su nombre");//Solicitar el nombre del usuario
-    Usuario Nombre1 = new Usuario(Nombre);
-
+    Usuario Nombre1 = new Usuario(Nombre);//pasarle el nombre a la clase Usuario
+    UserTypeC usertype = new UserTypeC();//Instancia para indicar que tipo de usuario ha sido inicializado
+    
     Cliente client;
 
     public ClientExec() {
-        setTitle("SERVMESS");//Ponerle nombre a la ventana de chat
+        setTitle("SERVMESS"+Nombre1.getNombre());//Ponerle nombre a la ventana de chat
         initComponents();
         client = new Cliente(cuadropantalla);//pasar el parametro del cuadropantalla a la clase Client
         Thread thread = new Thread(client);//hacer un hilo nuevo
         thread.start();//iniciar el hilo
-        
+        usertype.TypeofUser();//indicar el tipo de usuario
         cuadropantalla.setEditable(false);////Evitar la edicion del cuadro de mensajes
-        
+        JOptionPane.showMessageDialog(null, "Usuario guardado correctamente. \nBienvenido "+Nombre1.getNombre());//Darle la bienvenida al usuario
 
     }
     @SuppressWarnings("unchecked")
@@ -92,7 +93,7 @@ public class ClientExec extends javax.swing.JFrame {
             String mensajesalida = "";//Variable para guardar el mensaje
             mensajesalida = cuadromensaje.getText().trim();//Tomar el texto del cuadromensaje
             cuadromensaje.setText("");//limpiar el cuadro mensaje
-            client.mandarmensaje(mensajesalida+"\n");//enviar el mensaje por medio del metodo mandarmensaje de la clase cliente 
+            client.mandarmensaje(Nombre1.getNombre()+": "+ mensajesalida+"\n");//enviar el mensaje por medio del metodo mandarmensaje de la clase cliente 
   
         }catch (Exception e){
 
