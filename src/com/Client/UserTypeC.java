@@ -1,12 +1,18 @@
 
 package com.Client;
 
-//Class that inherit from UserType and indicates tha the Client is started
 
 import com.Server.UserType;
-
+/**
+ * Class that inherit from UserType and indicates tha the Client is started
+ * @author Oscar Méndez Granados
+ * @version 0.5
+ */
 public class UserTypeC extends UserType{
+    /**
+     * shows that the client has been started
+     */
     public void TypeofUser(){
-        System.out.println("");
+        System.out.println("Client Started");
     }
 }

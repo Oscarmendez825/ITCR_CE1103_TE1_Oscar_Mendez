@@ -7,7 +7,11 @@ import java.io.IOException;
 import java.net.Socket;
 import java.util.LinkedList;
 
-
+/**
+ * This class is in charge to receive the information and comunicate it to the other clients
+ * @author Oscar Méndez Granados
+ * @version 0.5
+ */
 public class ServerCreator implements Runnable {
     private Socket port;//set the socket port
     private DataInputStream datain;//input data
@@ -15,14 +19,20 @@ public class ServerCreator implements Runnable {
 
     private LinkedList<Socket> users = new LinkedList<Socket>();//active users list
     
- 
+    /**
+     * 
+     * @param port socket port
+     * @param users list
+     */
     public ServerCreator(Socket port,LinkedList users){//Costructor that manage the socket and the users list
         this.port = port;
         this.users = users;
     }
     
     
-
+    /**
+     * Receive the information and comunicate it to the other users
+     */
     public void run() {
         try {
             //start the input and output channels
@@ -31,11 +41,11 @@ public class ServerCreator implements Runnable {
             
             
             while(true){//Receive de clients messages
-               String recibido = datain.readUTF();
+               String received = datain.readUTF();
                
                 for (int i = 0; i < users.size(); i++) {
                     dataout = new DataOutputStream(users.get(i).getOutputStream());//send the message to all the active users
-                    dataout.writeUTF(recibido);//send the message
+                    dataout.writeUTF(received);//send the message
                 }
             }
         } catch (IOException e) {

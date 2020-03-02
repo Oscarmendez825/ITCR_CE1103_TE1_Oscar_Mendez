@@ -3,7 +3,11 @@ package com.Client;
 
 import java.awt.event.KeyEvent;
 import javax.swing.JOptionPane;
-
+/**
+ * This class is based on the graphical interface that the user will have to chat, as well as some functions related to reading messages
+ * @author Oscar Méndez Granados
+ * @version 0.5
+ */
 public class ClientExec extends javax.swing.JFrame {
 
     String name = JOptionPane.showInputDialog("Please write your name: ");//Take the name of the user
@@ -12,6 +16,10 @@ public class ClientExec extends javax.swing.JFrame {
 
     Client client;
 
+    /**
+     * Is responsible for initializing some functions in the class
+     * 
+     */
     public ClientExec() {
         setTitle("SERVMESS/"+username.getNombre());//Set the title of the window chat
         initComponents();
@@ -85,7 +93,10 @@ public class ClientExec extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+/**
+ * It is in charge of sending the message to the Client class once the button is pressed
+ * @param evt 
+ */
     private void sendbuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sendbuttonActionPerformed
        
         try{
@@ -99,15 +110,20 @@ public class ClientExec extends javax.swing.JFrame {
         }
 
     }//GEN-LAST:event_sendbuttonActionPerformed
-
+/**
+ * Receive an event in case the "Enter" key is pressed and thus send the message to the Client class as the "sendbutton" button does
+ * @param evt 
+ */
     private void messageboxKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_messageboxKeyTyped
         char teclaenter = evt.getKeyChar();
         if (teclaenter==KeyEvent.VK_ENTER){
             sendbutton.doClick();//allow to send the message if enter is pulsed
         }
     }//GEN-LAST:event_messageboxKeyTyped
-
-
+    /**
+     * Main Method of the ClientExec class
+     * @param args 
+     */
     public static void main(String args[]) {
         
 

@@ -8,7 +8,11 @@ import java.net.Socket;
 import javax.swing.JEditorPane;
 import javax.swing.JOptionPane;
 
-
+/**
+ * This class is responsible for connecting to the server, it is also responsible for sending and receiving messages to display them on the screen
+ * @author Oscar Méndez Granados
+ * @version 0.5
+ */
 public class Client implements Runnable {
     //Atributes
         JEditorPane window;
@@ -21,8 +25,11 @@ public class Client implements Runnable {
         
 
 
-
-    public Client(JEditorPane window){//this method take control of input and output data of the panel in ClientExec class
+/**
+ * this method take control of input and output data and also the panel in ClientExec class
+ * @param window JEditorPane 
+ */
+    public Client(JEditorPane window){
         this.window = window;
         try {
             port = new Socket(ip,genport);//make the connection to the server
@@ -32,7 +39,10 @@ public class Client implements Runnable {
             e.printStackTrace();
         }
     }
-     public void run() {//this method take and read the messages
+    /**
+     * this method take and read the messages and show the messages on screen
+     */
+     public void run() {
         try{
             while(true){
                 message += datain.readUTF();//read message and save it in a string variable
@@ -44,7 +54,11 @@ public class Client implements Runnable {
         }
         
     }
-     public void sendmessage(String message){//this method send the messages to the other users
+     /**
+      * this method send the messages to the other users
+      * @param  message String 
+      */
+     public void sendmessage(String message){
         try {
             dataout.writeUTF(message);//send messages
         } catch (IOException e) {

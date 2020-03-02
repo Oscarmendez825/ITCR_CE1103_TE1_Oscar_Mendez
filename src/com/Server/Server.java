@@ -6,13 +6,21 @@ import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.LinkedList;
 
-
+/**
+ * This class is in charge to make the connection with the clients
+ * @author Oscar Méndez Granados
+ * @version 0.5
+ */
 public class Server {
     private final int genport =1201;//Set the port that comunicates clients and server
     private final int userscant=10;//Set the max quantity of users that will be connected at the same time
 
     private LinkedList<Socket> users = new LinkedList<Socket>();//make a list with the active users
     UserTypeS tipo = new UserTypeS();//Object of UserTypeC class that show what type of user get started
+    
+    /**
+     * This method accept the client connection and add the new client into a list
+     */
     public void startserver(){
         try {
             ServerSocket server = new ServerSocket(genport,userscant);//Set the port and the limit of users
@@ -32,8 +40,13 @@ public class Server {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        
-    } public static void main(String[] args) {
+    
+    } 
+    /**
+     * Main method of the Server class
+     * @param args 
+     */
+    public static void main(String[] args) {
         Server server = new Server();
         server.startserver();
     }
