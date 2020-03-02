@@ -1,7 +1,7 @@
 
-package clienteservidor;
+package com.Client;
 
-
+import com.Client.ClientExec;
 
 
 public class StartWindow extends javax.swing.JFrame {
@@ -10,7 +10,7 @@ public class StartWindow extends javax.swing.JFrame {
     public StartWindow() {
         setTitle("ServMess");
         initComponents();
-        instructionsbox.setEditable(false);//restringir editar las instrucciones
+        instructionsbox.setEditable(false);//restrict that the box where the message is displayed cannot be edited
     }
 
 
@@ -55,12 +55,12 @@ public class StartWindow extends javax.swing.JFrame {
         jScrollPane1.setBounds(210, 190, 482, 190);
 
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/LOGO.png"))); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/images/LOGO.png"))); // NOI18N
         jLabel2.setText("jLabel2");
         getContentPane().add(jLabel2);
         jLabel2.setBounds(250, 10, 300, 193);
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/inicio.jpg"))); // NOI18N
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/images/inicio.jpg"))); // NOI18N
         getContentPane().add(jLabel3);
         jLabel3.setBounds(0, -10, 890, 490);
 
@@ -68,8 +68,8 @@ public class StartWindow extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        this.setVisible(false);//Cerrar esta ventana
-        new ClientExec().setVisible(true);//Abrir la ventana del cliente
+        this.setVisible(false);//Close this Frame
+        new ClientExec().setVisible(true);//Open the ClientExec Frame
     }//GEN-LAST:event_jButton1ActionPerformed
 
     public static void main(String args[]) {
