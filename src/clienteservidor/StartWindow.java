@@ -69,7 +69,7 @@ public class StartWindow extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         this.setVisible(false);//Cerrar esta ventana
-        new Client().setVisible(true);//Abrir la ventana del cliente
+        new ClientExec().setVisible(true);//Abrir la ventana del cliente
     }//GEN-LAST:event_jButton1ActionPerformed
 
     public static void main(String args[]) {
