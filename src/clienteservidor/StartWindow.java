@@ -8,9 +8,9 @@ public class StartWindow extends javax.swing.JFrame {
 
 
     public StartWindow() {
-        setTitle("ServMess");//ponerle nombre a la ventana
+        setTitle("ServMess");
         initComponents();
-        instructionsbox.setEditable(false);//restringir el editar las instrucciones
+        instructionsbox.setEditable(false);//restringir editar las instrucciones
     }
 
 
@@ -68,8 +68,8 @@ public class StartWindow extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        this.setVisible(false);//cerrar esta ventana
-        new Client().setVisible(true);//abrir la ventana del chat
+        this.setVisible(false);//Cerrar esta ventana
+        new Client().setVisible(true);//Abrir la ventana del cliente
     }//GEN-LAST:event_jButton1ActionPerformed
 
     public static void main(String args[]) {

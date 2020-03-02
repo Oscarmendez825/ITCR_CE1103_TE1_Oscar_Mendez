@@ -1,19 +1,19 @@
 
 package clienteservidor;
 
+
 import javax.swing.JOptionPane;
 
 
 public class Client extends javax.swing.JFrame {
- 
-    String Nombre = JOptionPane.showInputDialog("Digite su Nombre: ");//Variable que brinda el valor  del nombre
-    
+
+    //Creacion de atributos y objetos para llamar a clase usuario
+    String Nombre = JOptionPane.showInputDialog("Digite su Nombre: ");//Solicitar el nombre del usuario
+    Usuario Nombre1 = new Usuario(Nombre);
     public Client() {
         initComponents();
-
-        cuadropantalla.setEditable(false);//Aqui se restringe el no poder editar el cuadro en el que se desplegan los mensajes
-        
-        }
+        cuadropantalla.setEditable(false);//Evitar la edicion del cuadro de mensajes
+    }
     
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -25,11 +25,9 @@ public class Client extends javax.swing.JFrame {
         cuadromensaje = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         botonenviar = new javax.swing.JButton();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setLocation(new java.awt.Point(200, 150));
         setMinimumSize(new java.awt.Dimension(935, 580));
         getContentPane().setLayout(null);
 
@@ -44,9 +42,9 @@ public class Client extends javax.swing.JFrame {
         jScrollPane1.setViewportView(cuadropantalla);
 
         getContentPane().add(jScrollPane1);
-        jScrollPane1.setBounds(10, 50, 900, 250);
+        jScrollPane1.setBounds(10, 50, 900, 260);
         getContentPane().add(cuadromensaje);
-        cuadromensaje.setBounds(20, 370, 650, 130);
+        cuadromensaje.setBounds(10, 330, 650, 160);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/LOGO.png"))); // NOI18N
         getContentPane().add(jLabel1);
@@ -61,27 +59,20 @@ public class Client extends javax.swing.JFrame {
         getContentPane().add(botonenviar);
         botonenviar.setBounds(830, 370, 80, 40);
 
-        jLabel4.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
-        jLabel4.setText("Write your message here.....");
-        getContentPane().add(jLabel4);
-        jLabel4.setBounds(20, 330, 610, 40);
-
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/30413hd.jpg"))); // NOI18N
-        getContentPane().add(jLabel5);
-        jLabel5.setBounds(0, 0, 930, 540);
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/30413hd.jpg"))); // NOI18N
+        getContentPane().add(jLabel3);
+        jLabel3.setBounds(-10, 0, 940, 530);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void botonenviarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonenviarActionPerformed
         
-
     }//GEN-LAST:event_botonenviarActionPerformed
 
 
     public static void main(String args[]) {
-
-
+ 
 
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
@@ -99,15 +90,11 @@ public class Client extends javax.swing.JFrame {
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(Client.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-  
 
-
-        
 
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new Client().setVisible(true);
-                
             }
         });
         
@@ -119,8 +106,7 @@ public class Client extends javax.swing.JFrame {
     private static javax.swing.JTextArea cuadropantalla;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
 }
