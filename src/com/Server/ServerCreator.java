@@ -12,19 +12,19 @@ import java.util.LinkedList;
  * @author Oscar Méndez Granados
  * @version 0.5
  */
-public class ServerCreator implements Runnable {
-    private Socket port;//set the socket port
-    private DataInputStream datain;//input data
-    private DataOutputStream dataout;//output data
+public class ServerCreator implements Runnable {//clase
+    private Socket port;//set the socket port----encapsulamiento--atributo
+    private DataInputStream datain;//input data----encapsulamiento--atributo
+    private DataOutputStream dataout;//output data----encapsulamiento--atributo
 
-    private LinkedList<Socket> users = new LinkedList<Socket>();//active users list
+    private LinkedList<Socket> users = new LinkedList<Socket>();//active users list--encapsulamiento
     
     /**
      * 
      * @param port socket port
      * @param users list
      */
-    public ServerCreator(Socket port,LinkedList users){//Costructor that manage the socket and the users list
+    public ServerCreator(Socket port,LinkedList users){//Costructor that manage the socket and the users list--metodo
         this.port = port;
         this.users = users;
     }
@@ -33,7 +33,7 @@ public class ServerCreator implements Runnable {
     /**
      * Receive the information and comunicate it to the other users
      */
-    public void run() {
+    public void run() {//metodo
         try {
             //start the input and output channels
             datain = new DataInputStream(port.getInputStream());

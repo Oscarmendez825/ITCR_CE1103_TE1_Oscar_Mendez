@@ -1,19 +1,17 @@
 
 package com.Client;
 
-import com.Client.ClientExec;
-
 /**
  * This class is responsible for welcoming users as well as providing instructions.
  * @author Oscar Méndez Granados 
  * @version 0.5
  */
-public class StartWindow extends javax.swing.JFrame {
+public class StartWindow extends javax.swing.JFrame {//herencia---clase
 
 /**
  * Is responsible for initializing some functions in the class
  */
-    public StartWindow() {
+    public StartWindow() {//metodo
         setTitle("ServMess");
         initComponents();
         instructionsbox.setEditable(false);//restrict that the box where the message is displayed cannot be edited
@@ -76,6 +74,7 @@ public class StartWindow extends javax.swing.JFrame {
  * This method close this window and display the ClientExec window
  * @param evt 
  */
+    //metodo
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         this.setVisible(false);//Close this Frame
         new ClientExec().setVisible(true);//Open the ClientExec Frame
@@ -84,6 +83,7 @@ public class StartWindow extends javax.swing.JFrame {
  * Main Method of the StartWindow class
  * @param args 
  */
+    //metodo
     public static void main(String args[]) {
 
 

@@ -11,17 +11,17 @@ import java.util.LinkedList;
  * @author Oscar Méndez Granados
  * @version 0.5
  */
-public class Server {
-    private final int genport =1201;//Set the port that comunicates clients and server
-    private final int userscant=10;//Set the max quantity of users that will be connected at the same time
+public class Server {//clase
+    private final int genport =1201;//Set the port that comunicates clients and server----encapsulamiento--atributo
+    private final int userscant=10;//Set the max quantity of users that will be connected at the same time----encapsulamiento--atributo
 
-    private LinkedList<Socket> users = new LinkedList<Socket>();//make a list with the active users
-    UserTypeS tipo = new UserTypeS();//Object of UserTypeC class that show what type of user get started
+    private LinkedList<Socket> users = new LinkedList<Socket>();//make a list with the active users----encapsulamiento
+    UserTypeS tipo = new UserTypeS();//Object of UserTypeC class that show what type of user get started--instancia
     
     /**
      * This method accept the client connection and add the new client into a list
      */
-    public void startserver(){
+    public void startserver(){//metodo
         try {
             ServerSocket server = new ServerSocket(genport,userscant);//Set the port and the limit of users
             //Make the connection Server-Client
@@ -46,7 +46,7 @@ public class Server {
      * Main method of the Server class
      * @param args 
      */
-    public static void main(String[] args) {
+    public static void main(String[] args) {//metodo
         Server server = new Server();
         server.startserver();
     }

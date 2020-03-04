@@ -5,7 +5,7 @@ package com.Server;
  * @author Oscar Méndez Granados
  * @version 0.5
  */
-public abstract class  UserType {
-    public abstract void TypeofUser();
+public abstract class  UserType {//Clase--abstraccion
+    public abstract void TypeofUser();//metodo--abstraccion--sobreescritura
         
 }

@@ -8,11 +8,11 @@ import com.Server.UserType;
  * @author Oscar Méndez Granados
  * @version 0.5
  */
-public class UserTypeC extends UserType{
+public class UserTypeC extends UserType{//clase--herencia
     /**
      * shows that the client has been started
      */
-    public void TypeofUser(){
+    public void TypeofUser(){//metodo---sobreescritura
         System.out.println("Client Started");
     }
 }

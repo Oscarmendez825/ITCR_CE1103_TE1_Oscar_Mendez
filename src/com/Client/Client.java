@@ -13,15 +13,15 @@ import javax.swing.JOptionPane;
  * @author Oscar Méndez Granados
  * @version 0.5
  */
-public class Client implements Runnable {
+public class Client implements Runnable {//clase
     //Atributes
         JEditorPane window;
-        private Socket port;//port for a client
-        private int genport = 1201;//the number of the port
-         private String ip = JOptionPane.showInputDialog("Digite la ip del servidor: ");
-        private DataInputStream datain;//input data 
-        private DataOutputStream dataout;//output data 
-        private String message;//variable to save the message
+        private Socket port;//port for a client-----encapsulamiento
+        private int genport = 1201;//the number of the port-----encapsulamiento
+         private String ip = JOptionPane.showInputDialog("Digite la ip del servidor: ");//-----encapsulamiento
+        private DataInputStream datain;//input data -----encapsulamiento
+        private DataOutputStream dataout;//output data -----encapsulamiento
+        private String message;//variable to save the message-----encapsulamiento
         
 
 
@@ -29,7 +29,7 @@ public class Client implements Runnable {
  * this method take control of input and output data and also the panel in ClientExec class
  * @param window JEditorPane 
  */
-    public Client(JEditorPane window){
+    public Client(JEditorPane window){//metodo
         this.window = window;
         try {
             port = new Socket(ip,genport);//make the connection to the server
@@ -42,7 +42,7 @@ public class Client implements Runnable {
     /**
      * this method take and read the messages and show the messages on screen
      */
-     public void run() {
+     public void run() {//metodo
         try{
             while(true){
                 message += datain.readUTF();//read message and save it in a string variable
@@ -58,7 +58,7 @@ public class Client implements Runnable {
       * this method send the messages to the other users
       * @param  message String 
       */
-     public void sendmessage(String message){
+     public void sendmessage(String message){//metodo
         try {
             dataout.writeUTF(message);//send messages
         } catch (IOException e) {

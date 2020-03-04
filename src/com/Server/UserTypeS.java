@@ -6,11 +6,11 @@ package com.Server;
  * @author Oscar Méndez Granados
  * @version 0.5
  */
-public class UserTypeS extends UserType{
+public class UserTypeS extends UserType{//clase--herencia
     /**
      * shows that the server has been started
      */
-    public void TypeofUser(){
+    public void TypeofUser(){//metodo--sobreescritura
       
         System.out.println("The Server is started...");
     }

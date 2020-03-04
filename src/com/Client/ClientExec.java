@@ -8,8 +8,8 @@ import javax.swing.JOptionPane;
  * @author Oscar Méndez Granados
  * @version 0.5
  */
-public class ClientExec extends javax.swing.JFrame {
-
+public class ClientExec extends javax.swing.JFrame {//herencia--clase
+//instancias
     String name = JOptionPane.showInputDialog("Please write your name: ");//Take the name of the user
     UserData username = new UserData(name);//Make a object of the class UserData and send it the name
     UserTypeC usertype = new UserTypeC();//Object of UserTypeC class that show what type of user get started
@@ -21,14 +21,14 @@ public class ClientExec extends javax.swing.JFrame {
      * 
      */
     public ClientExec() {
-        setTitle("SERVMESS/"+username.getNombre());//Set the title of the window chat
+        setTitle("SERVMESS/"+username.getName());//Set the title of the window chat
         initComponents();
         client = new Client(screenbox);//send the screenbox to the ClientClass Consturctor
-        Thread thread = new Thread(client);//make a new thread
+        Thread thread = new Thread(client);//make a new thread--instancia
         thread.start();//start thread
         usertype.TypeofUser();//call the typeofuser method to show what type of user start to working
         screenbox.setEditable(false);//restrict that the box where the message is displayed cannot be edited
-        JOptionPane.showMessageDialog(null, "User saved correctly. \nWelcome "+username.getNombre());//show "welcome user"
+        JOptionPane.showMessageDialog(null, "User saved correctly. \nWelcome "+username.getName());//show "welcome user"
 
     }
     @SuppressWarnings("unchecked")
@@ -97,13 +97,14 @@ public class ClientExec extends javax.swing.JFrame {
  * It is in charge of sending the message to the Client class once the button is pressed
  * @param evt 
  */
+    //metodo
     private void sendbuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sendbuttonActionPerformed
        
         try{
             String outmessage = "";//Set the variable that save the message that will be send
             outmessage = messagebox.getText().trim();//Take the text that was wrote on the messagebox
             messagebox.setText("");//Clean messagebox
-            client.sendmessage(username.getNombre()+": "+outmessage+"\n");//call sendmessage method and share it the message
+            client.sendmessage(username.getName()+": "+outmessage+"\n");//call sendmessage method and share it the message
   
         }catch (Exception e){
 
@@ -114,6 +115,7 @@ public class ClientExec extends javax.swing.JFrame {
  * Receive an event in case the "Enter" key is pressed and thus send the message to the Client class as the "sendbutton" button does
  * @param evt 
  */
+    //metodo
     private void messageboxKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_messageboxKeyTyped
         char teclaenter = evt.getKeyChar();
         if (teclaenter==KeyEvent.VK_ENTER){
@@ -124,7 +126,7 @@ public class ClientExec extends javax.swing.JFrame {
      * Main Method of the ClientExec class
      * @param args 
      */
-    public static void main(String args[]) {
+    public static void main(String args[]) {//metodo
         
 
 
