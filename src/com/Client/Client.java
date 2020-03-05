@@ -21,7 +21,7 @@ public class Client implements Runnable {//clase
          private String ip = JOptionPane.showInputDialog("Digite la ip del servidor: ");//-----encapsulamiento
         private DataInputStream datain;//input data -----encapsulamiento
         private DataOutputStream dataout;//output data -----encapsulamiento
-        private String message;//variable to save the message-----encapsulamiento
+        private String message="";//variable to save the message-----encapsulamiento
         
 
 
