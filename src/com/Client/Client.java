@@ -18,7 +18,6 @@ public class Client implements Runnable {//clase
         JEditorPane window;
         private Socket port;//port for a client-----encapsulamiento
         private int genport = 1201;//the number of the port-----encapsulamiento
-         private String ip = JOptionPane.showInputDialog("Digite la ip del servidor: ");//-----encapsulamiento
         private DataInputStream datain;//input data -----encapsulamiento
         private DataOutputStream dataout;//output data -----encapsulamiento
         private String message="";//variable to save the message-----encapsulamiento
@@ -32,7 +31,7 @@ public class Client implements Runnable {//clase
     public Client(JEditorPane window){//metodo
         this.window = window;
         try {
-            port = new Socket(ip,genport);//make the connection to the server
+            port = new Socket("127.0.0.1",genport);//make the connection to the server
             datain = new DataInputStream(port.getInputStream());//read the input data
             dataout = new DataOutputStream(port.getOutputStream());//read the output data
         } catch (Exception e) {
