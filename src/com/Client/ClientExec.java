@@ -10,9 +10,7 @@ import javax.swing.JOptionPane;
  */
 public class ClientExec extends javax.swing.JFrame {//herencia--clase
 //instancias
-    String name = JOptionPane.showInputDialog("Please write your name: ");//Take the name of the user
-    UserData username = new UserData(name);//Make a object of the class UserData and send it the name
-    UserTypeC usertype = new UserTypeC();//Object of UserTypeC class that show what type of user get started
+    
 
     Client client;
 
@@ -21,14 +19,13 @@ public class ClientExec extends javax.swing.JFrame {//herencia--clase
      * 
      */
     public ClientExec() {
-        setTitle("SERVMESS/"+username.getName());//Set the title of the window chat
+       
         initComponents();
         client = new Client(screenbox);//send the screenbox to the ClientClass Consturctor
         Thread thread = new Thread(client);//make a new thread--instancia
         thread.start();//start thread
-        usertype.TypeofUser();//call the typeofuser method to show what type of user start to working
         screenbox.setEditable(false);//restrict that the box where the message is displayed cannot be edited
-        JOptionPane.showMessageDialog(null, "User saved correctly. \nWelcome "+username.getName());//show "welcome user"
+       
 
     }
     @SuppressWarnings("unchecked")
@@ -104,7 +101,7 @@ public class ClientExec extends javax.swing.JFrame {//herencia--clase
             String outmessage = "";//Set the variable that save the message that will be send
             outmessage = messagebox.getText().trim();//Take the text that was wrote on the messagebox
             messagebox.setText("");//Clean messagebox
-            client.sendmessage(username.getName()+": "+outmessage+"\n");//call sendmessage method and share it the message
+            client.sendmessage(outmessage+"\n");//call sendmessage method and share it the message
   
         }catch (Exception e){
 

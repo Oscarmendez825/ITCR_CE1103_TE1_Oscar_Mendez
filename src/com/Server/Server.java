@@ -16,7 +16,6 @@ public class Server {//clase
     private final int userscant=10;//Set the max quantity of users that will be connected at the same time----encapsulamiento--atributo
 
     private LinkedList<Socket> users = new LinkedList<Socket>();//make a list with the active users----encapsulamiento
-    UserTypeS tipo = new UserTypeS();//Object of UserTypeC class that show what type of user get started--instancia
     
     /**
      * This method accept the client connection and add the new client into a list
@@ -28,7 +27,6 @@ public class Server {//clase
             while(true){
                 System.out.println("Server Started....");
                 System.out.println("Waiting for users...");
-                tipo.TypeofUser();//call the typeofuser method to show what type of user start to working
                 
                 Socket client = server.accept();//accept the client connection
                 users.add(client);//add the user into the users list
